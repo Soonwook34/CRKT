@@ -1,7 +1,7 @@
 # CRKT
 This is our official implementation for the paper Enhancing knowledge tracing with concept map and response disentanglement (Knowledge-Based Systems).
 
-<img width="602" alt="CRKT" src="assets/CRKT_architecture.jpg">
+<img alt="CRKT" src="assets/CRKT_architecture.jpg">
 
 ## Experiment Environment
 - python 3.10+
