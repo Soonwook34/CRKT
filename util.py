@@ -84,21 +84,12 @@ def set_config(args):
 
 def load_model(model_name, args):
     match model_name:
-        case "CRKT" | "CRKT_no_unchosen" | "CRKT_no_option" | "CRKT_no_topk" | "CRKT_no_map":
+        case "CRKT":
             concept_map_adj = get_concept_graph(args.dataset_path, args.concept, self_loops=False)
             with open(os.path.join(args.dataset_path, "data", "question_data.json"), encoding="utf8") as q_data:
                 question_data = json.load(q_data)
             option_list = [question["option_len"] for question in question_data]
-            if model_name == "CRKT":
-                from models.CRKT import CRKT
-            elif model_name == "CRKT_no_unchosen":
-                from models.CRKT_no_unchosen import CRKT
-            elif model_name == "CRKT_no_option":
-                from models.CRKT_no_option import CRKT
-            elif model_name == "CRKT_no_topk":
-                from models.CRKT_no_topk import CRKT
-            elif model_name == "CRKT_no_map":
-                from models.CRKT_no_map import CRKT
+            from models.CRKT import CRKT
             model = CRKT(num_c=args.concept,
                          num_q=args.question,
                          num_o=args.option,
