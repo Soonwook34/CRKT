@@ -133,9 +133,9 @@ class KTDataset(Dataset):
                 neg_scores.append(neg_score)
                 neg_options.append(neg_option)
             count_flip = count_flip_pos + count_flip_neg
-            if count_target > 0 and count_all > 0:
-                print(count_all, count_target_all, count_target, count_flip_pos, count_flip_neg)
-                print(f"{count_flip / count_target:.2f}, {count_flip / count_all:.2f}")
+            # if count_target > 0 and count_all > 0:
+            #     print(count_all, count_target_all, count_target, count_flip_pos, count_flip_neg)
+            #     print(f"{count_flip / count_target:.2f}, {count_flip / count_all:.2f}")
         else:
             pos_scores, pos_options = deepcopy(self.score), deepcopy(self.option)
             neg_scores, neg_options = deepcopy(self.score), deepcopy(self.option)

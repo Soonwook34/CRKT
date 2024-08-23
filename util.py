@@ -112,8 +112,7 @@ def load_model(model_name, args):
                          map=concept_map_adj,
                          option_list=option_list,
                          dropout=args.dropout,
-                         bias=args.bias,
-                         version=args.version)
+                         bias=args.bias)
         case "DKT":
             from models.DKT import DKT
             model = DKT(num_c=args.concept,

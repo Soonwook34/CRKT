@@ -243,9 +243,6 @@ def forward_model(model, data, device):
 if __name__ == "__main__":
     args = MainArgParser().parse_args()
     args.lr = float(args.lr)
-    args.version = literal_eval(args.version)
-    if not isinstance(args.version, list):
-        raise Exception("Wrong type of args.version. ex) [0,1,0,0]")
     args.device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
     model_list = ["DKT", "GKT", "SAKT", "AKT", "DTransformer", "DP_DKT", "CRKT",
                   "CRKT_no_unchosen", "CRKT_no_option", "CRKT_no_topk", "CRKT_no_map"]

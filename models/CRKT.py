@@ -10,7 +10,7 @@ from torch_geometric.utils import to_edge_index, add_remaining_self_loops
 
 class CRKT(nn.Module):
     def __init__(self, num_c, num_q, num_o, dim_c, dim_q, dim_g,
-                 num_heads, layer_g, top_k, lamb, map, option_list, dropout, bias, version):
+                 num_heads, layer_g, top_k, lamb, map, option_list, dropout, bias):
         super().__init__()
         self.name = "CRKT"
 
