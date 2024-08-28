@@ -2,6 +2,7 @@
 
 Welcome to the official implementation of the paper **"Enhancing Knowledge Tracing with Concept Map and Response Disentanglement"** published in *Knowledge-Based Systems* (2024).
 
+
 ## Paper Information
 
 - **Authors:** Soonwook Park, Donghoon Lee, Hogun Park
@@ -10,7 +11,8 @@ Welcome to the official implementation of the paper **"Enhancing Knowledge Traci
 - **DOI:** [10.1016/j.knosys.2024.112346](https://doi.org/10.1016/j.knosys.2024.112346)
 - **arXiv:** [2408.12996](https://arxiv.org/abs/2408.12996)
 
-## Citation
+
+**Citation**
 
 If you find our work useful, please consider citing it:
 
@@ -29,6 +31,7 @@ If you find our work useful, please consider citing it:
 
 <img alt="CRKT" src="assets/CRKT_architecture.jpg">
 
+
 ## Experiment Environment
 - python 3.10+
 - torch 2.0+
@@ -37,12 +40,14 @@ If you find our work useful, please consider citing it:
 - pandas 2.2.0+
 - tqdm
 
-### Environment Setting Example
+**Environment Setting Example**
+
 ```bash
 pip3 install torch torchvision torchaudio
 pip3 install torch_geometric
 pip3 install scikit-learn pandas tqdm
 ```
+
 
 ## Download Dataset
 
@@ -50,9 +55,10 @@ To use the CRKT model, you first need to download and prepare the necessary data
 
 Follow the instructions below to download and set up datasets.
 
+
 ### 1. DBE-KT22 Dataset
 
-- **Download Link:** [DBE-KT22 Dataset](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH)
+- [**Download Link**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH)
 - **Steps to Download and Prepare:**
   1. Download the dataset files from the provided link.
   2. Extract the downloaded files into the `data/DBE_KT22/raw` directory.
@@ -66,9 +72,10 @@ Follow the instructions below to download and set up datasets.
   - `Transaction.csv`
   - `KC_Relationships.csv`
 
+
 ### 2. EdNet Dataset
 
-- **Download Link:** [EdNet Dataset](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing)
+- [**Download Link**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing)
 - **Steps to Download and Prepare:**
   1. Download the dataset file from the provided link.
   2. Extract the downloaded file into the `data/EdNet/raw` directory.
@@ -76,9 +83,10 @@ Follow the instructions below to download and set up datasets.
 - **Required File:**
   - `kt_ednet.json`
 
+
 ### 3. NIPS34 Dataset
 
-- **Download Link:** [NIPS34 Dataset](https://eedi.com/projects/neurips-education-challenge)
+- [**Download Link**](https://eedi.com/projects/neurips-education-challenge)
 - **Steps to Download and Prepare:**
   1. Download the dataset files from the provided link.
   2. Extract the downloaded files into the `data/NIPS34/raw` directory.
@@ -88,9 +96,10 @@ Follow the instructions below to download and set up datasets.
   - `data/train_data/train_task_3_4.csv`
   - `data/metadata/subject_metadata.csv`
 
+
 ### 4. ENEM Dataset
 
-- **Download Link:** [ENEM Dataset](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip)
+- [**Download Link**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip)
 - **Steps to Download and Prepare:**
   1. Click on the download link above to access the GitHub repository.
   2. Download the `enem_dep.zip` file from the repository.
@@ -104,6 +113,7 @@ Make sure all the required files are properly extracted in the specified directo
 
 ## Basic Usage
 
+
 ### Preprocessing Datasets
 
 Before running experiments with the CRKT model, you must preprocess the datasets. Use the following command to preprocess the dataset:
@@ -111,7 +121,9 @@ Before running experiments with the CRKT model, you must preprocess the datasets
 ```bash
 python3 data_preprocess.py --dataset {dataset_name}
 ```
+
 Replace {dataset_name} with the name of the folder containing the dataset you want to preprocess. This should match the folder name within the `data` directory.
+
 
 ### Run Experiment
 
@@ -139,7 +151,8 @@ python3 main.py --dataset {dataset_name} --model {model} --batch {batch_size} --
   - `--beta {contrastive_loss_coefficient}`: The coefficient for the contrastive learning loss.
   - `--exp_name {experiment_name}`: A name for the experiment, used for tracking and logging purposes.
 
-**Example Command:**
+
+- **Example Command:**
 
 To run an experiment with the DBE-KT22 dataset and the CRKT model with a batch size of 128, learning rate of 1e-3, and specified dimensions and coefficients, the command would look like:
 
