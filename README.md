@@ -58,9 +58,8 @@ Follow the instructions below to download and set up datasets.
 
 ### 1. DBE-KT22 Dataset
 
-- [**Download Link**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH)
 - **Steps to Download and Prepare:**
-  1. Download the dataset files from the provided link.
+  1. Download the dataset files from [**here**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH).
   2. Extract the downloaded files into the `data/DBE_KT22/raw` directory.
   3. Additionally, extract the `2_DBE_KT22_datafiles_100102_csv.zip` file within the same directory to ensure all data files are available.
   
@@ -75,9 +74,8 @@ Follow the instructions below to download and set up datasets.
 
 ### 2. EdNet Dataset
 
-- [**Download Link**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing)
 - **Steps to Download and Prepare:**
-  1. Download the dataset file from the provided link.
+  1. Download the dataset file from [**here**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing).
   2. Extract the downloaded file into the `data/EdNet/raw` directory.
   
 - **Required File:**
@@ -86,9 +84,8 @@ Follow the instructions below to download and set up datasets.
 
 ### 3. NIPS34 Dataset
 
-- [**Download Link**](https://eedi.com/projects/neurips-education-challenge)
 - **Steps to Download and Prepare:**
-  1. Download the dataset files from the provided link.
+  1. Download the dataset files from [**here**](https://eedi.com/projects/neurips-education-challenge).
   2. Extract the downloaded files into the `data/NIPS34/raw` directory.
   
 - **Required Files:**
@@ -101,9 +98,8 @@ Follow the instructions below to download and set up datasets.
 
 - [**Download Link**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip)
 - **Steps to Download and Prepare:**
-  1. Click on the download link above to access the GitHub repository.
-  2. Download the `enem_dep.zip` file from the repository.
-  3. Extract the downloaded file into the `data/ENEM/raw` directory.
+  1. Download the `enem_dep.zip` file from [**here**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip).
+  2. Extract the downloaded file into the `data/ENEM/raw` directory.
   
 - **Required File:**
   - `enem_dep.csv`
@@ -136,7 +132,7 @@ python3 main.py --dataset {dataset_name} --model {model} --batch {batch_size} --
 --beta {contrastive_loss_coefficient} --exp_name {experiment_name}
 ```
 
-- **Arguments:**
+**Arguments:**
   - `--dataset {dataset_name}`: The name of the dataset folder located in the `data/` directory. Examples include `DBE_KT22`, `EdNet`, `NIPS34`, or `ENEM`.
   - `--model {model}`: The name of the model you want to use for the experiment.
   - `--batch {batch_size}`: The size of the batch used during training.
@@ -152,7 +148,7 @@ python3 main.py --dataset {dataset_name} --model {model} --batch {batch_size} --
   - `--exp_name {experiment_name}`: A name for the experiment, used for tracking and logging purposes.
 
 
-- **Example Command:**
+**Example Command:**
 
 To run an experiment with the DBE-KT22 dataset and the CRKT model with a batch size of 128, learning rate of 1e-3, and specified dimensions and coefficients, the command would look like:
 
