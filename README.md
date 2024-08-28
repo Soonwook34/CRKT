@@ -8,8 +8,8 @@ Welcome to the official implementation of the paper **"Enhancing Knowledge Traci
 - **Authors:** Soonwook Park, Donghoon Lee, Hogun Park
 - **Journal:** Knowledge-Based Systems
 - **Year:** 2024
-- **DOI:** [10.1016/j.knosys.2024.112346](https://doi.org/10.1016/j.knosys.2024.112346)
-- **arXiv:** [2408.12996](https://arxiv.org/abs/2408.12996)
+- **DOI:** [10.1016/j.knosys.2024.112346](https://doi.org/10.1016/j.knosys.2024.112346){:target="_blank"}
+- **arXiv:** [2408.12996](https://arxiv.org/abs/2408.12996){:target="_blank"}
 
 
 **Citation**
@@ -53,12 +53,12 @@ pip3 install scikit-learn pandas tqdm
 
 To use the CRKT model, you first need to download and prepare the necessary datasets. The table below provides the download links and the required files for each dataset.
 
-| **Dataset Name** | **Download Link** | **Required Files** |
-|------------------|-------------------|--------------------|
-| **DBE-KT22**     | [Download Here](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH) | `Questions.csv`, `Question_KC_Relationships.csv`, `KCs.csv`, `Question_Choices.csv`, `Transaction.csv`, `KC_Relationships.csv` |
-| **EdNet**        | [Download Here](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing) | `kt_ednet.json` |
-| **NIPS34**       | [Download Here](https://eedi.com/projects/neurips-education-challenge) | `question_metadata_task_3_4.csv`, `train_task_3_4.csv`, `subject_metadata.csv` |
-| **ENEM**         | [Download Here](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip) | `enem_dep.csv` |
+| **Dataset**   | **Download**                                                                                                 | **Required Files**                                                                                                             |
+|---------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| **DBE-KT22**  | [link](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH){:target="_blank"}        | `Questions.csv`, `Question_KC_Relationships.csv`, `KCs.csv`, `Question_Choices.csv`, `Transaction.csv`, `KC_Relationships.csv` |
+| **EdNet**     | [link](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing){:target="_blank"} | `kt_ednet.json`                                                                                                                |
+| **NIPS34**    | [link](https://eedi.com/projects/neurips-education-challenge){:target="_blank"}                              | `question_metadata_task_3_4.csv`, `train_task_3_4.csv`, `subject_metadata.csv`                                                 |
+| **ENEM**      | [link](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip){:target="_blank"}             | `enem_dep.csv`                                                                                                                 |
 
 
 ### Setup Instructions
