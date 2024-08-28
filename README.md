@@ -48,7 +48,7 @@ pip3 install scikit-learn pandas tqdm
 ```
 
 
-## Download Dataset
+## Dataset Download
 
 To use the CRKT model, you first need to download and prepare the necessary datasets. The table below provides the download links and the required files for each dataset.
 
