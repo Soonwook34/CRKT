@@ -51,55 +51,20 @@ pip3 install scikit-learn pandas tqdm
 
 ## Download Dataset
 
-To use the CRKT model, you first need to download and prepare the necessary datasets. 
+To use the CRKT model, you first need to download and prepare the necessary datasets. The table below provides the download links and the required files for each dataset.
 
-Follow the instructions below to download and set up datasets.
-
-
-### 1. DBE-KT22 Dataset
-
-1. Download the dataset files from [**here**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH).
-2. Extract the downloaded files into the `data/DBE_KT22/raw` directory.
-3. Additionally, extract the `2_DBE_KT22_datafiles_100102_csv.zip` file within the same directory to ensure all data files are available.
-  
-- **Required Files:**
-  - `Questions.csv`
-  - `Question_KC_Relationships.csv`
-  - `KCs.csv`
-  - `Question_Choices.csv`
-  - `Transaction.csv`
-  - `KC_Relationships.csv`
+| **Dataset Name** | **Download Link** | **Required Files** |
+|------------------|-------------------|--------------------|
+| **DBE-KT22**     | [Download Here](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH) | `Questions.csv`, `Question_KC_Relationships.csv`, `KCs.csv`, `Question_Choices.csv`, `Transaction.csv`, `KC_Relationships.csv` |
+| **EdNet**        | [Download Here](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing) | `kt_ednet.json` |
+| **NIPS34**       | [Download Here](https://eedi.com/projects/neurips-education-challenge) | `question_metadata_task_3_4.csv`, `train_task_3_4.csv`, `subject_metadata.csv` |
+| **ENEM**         | [Download Here](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip) | `enem_dep.csv` |
 
 
-### 2. EdNet Dataset
+### Setup Instructions
 
-1. Download the dataset file from [**here**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing).
-2. Extract the downloaded file into the `data/EdNet/raw` directory.
-
-- **Required File:**
-  - `kt_ednet.json`
-
-
-### 3. NIPS34 Dataset
-
-1. Download the dataset files from [**here**](https://eedi.com/projects/neurips-education-challenge).
-2. Extract the downloaded files into the `data/NIPS34/raw` directory.
-
-- **Required Files:**
-  - `data/metadata/question_metadata_task_3_4.csv`
-  - `data/train_data/train_task_3_4.csv`
-  - `data/metadata/subject_metadata.csv`
-
-
-### 4. ENEM Dataset
-
-1. Download the `enem_dep.zip` file from [**here**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip).
-2. Extract the downloaded file into the `data/ENEM/raw` directory.
-
-- **Required File:**
-  - `enem_dep.csv`
-
-Make sure all the required files are properly extracted in the specified directory before proceeding with the model training or evaluation.
+1. **Download** the datasets from the links provided in the table above.
+2. **Extract** the files into the respective directories under `data/{dataset_name}/raw`. Ensure all required files are available in these directories before proceeding with preprocessing and experimentation.
 
 
 ## Basic Usage
