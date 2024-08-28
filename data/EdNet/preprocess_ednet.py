@@ -8,8 +8,7 @@ from tqdm import tqdm
 
 
 # subject_ids, q_ids, correct_ans, ans, labels
-DATA_JSON = "option_tracing/kt_ednet.json"
-# DATA_JSON = "kt_ednet_preprocess.json"
+DATA_JSON = "kt_ednet.json"
 
 USER_NUM = 5000
 
@@ -27,9 +26,6 @@ def preprocess(path):
     with open(data_path, encoding="utf8") as data:
         data_json = json.load(data)
     shuffle(data_json)
-    # with open(os.path.join(raw_path, "kt_ednet_preprocess.json"), "w", encoding="utf8") as output_file:
-    #     json.dump(data_json, output_file, indent=False, ensure_ascii=False)
-    # exit()
 
     user_id_data, question_data, is_correct_data = [], [], []
     answer_data, timestamp_data, concept_data, correct_answer_data = [], [], [], []
@@ -51,7 +47,6 @@ def preprocess(path):
             concept_data += [tuple(concept) for concept in logs["subject_ids"]]
             correct_answer_data += logs["correct_ans"]
             user_id += 1
-
 
     data_df = pd.DataFrame({"UserID": user_id_data,
                             "OriginalQuestionID": question_data,
@@ -93,14 +88,6 @@ def preprocess(path):
     relation_dict = get_concept_relation(data_df, len(concept_list))
     question_data = get_question_data(data_df)
     concept_map_vis_dict = get_concept_map_vis_data(data_df, relation_dict)
-
-    # # save preprocessed dataset
-    # save_path = os.path.join(path, "data")
-    # if not os.path.exists(save_path):
-    #     os.makedirs(save_path)
-    # save_file = os.path.join(save_path, "data.csv")
-    # data_df.to_csv(save_file, index=False)
-    # print(f"Dataset saved. ({save_file})\n")
 
     return data_df, relation_dict, question_data, concept_map_vis_dict
 
@@ -222,16 +209,16 @@ def get_concept_map_vis_data(data_df, relation_dict):
 """
 ========================================================
 # of User: 5000
-# of Question: 12044
+# of Question: 12080
 # of Concept: 189
-# of Option per Question: 1 ~ 4 (avg. 3.11)
-# of Interaction: 590925
+# of Option per Question: 1 ~ 4 (avg. 3.13)
+# of Interaction: 599898
 --------------------------------------------------------
 # of Concept per Question: 1 ~ 7 (avg. 2.27)
-# of Concept Relation: 223 (221 directed, 2 undirected)
+# of Concept Relation: 225 (223 directed, 2 undirected)
 --------------------------------------------------------
-# of Interaction per Student: 10 ~ 200 (avg. 118.19)
-Correct Response Rate: 66.04%
-Sparsity: 99.02%
+# of Interaction per Student: 10 ~ 200 (avg. 119.98)
+Correct Response Rate: 65.75%
+Sparsity: 99.01%
 ========================================================
 """
