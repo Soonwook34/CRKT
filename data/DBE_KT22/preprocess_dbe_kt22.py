@@ -4,18 +4,18 @@ import pandas as pd
 
 
 # id, question_rich_text, question_title, explanation, hint_text, question_text, difficulty
-QUESTION_CSV = "2_DBE_KT22_datafiles_100102_csv/Questions.csv"
+QUESTION_CSV = "Questions.csv"
 # id, question_id, knowledgecomponent_id
-QUESTION_CONCEPT_CSV = "2_DBE_KT22_datafiles_100102_csv/Question_KC_Relationships.csv"
+QUESTION_CONCEPT_CSV = "Question_KC_Relationships.csv"
 # id, name, description
-CONCEPT_CSV = "2_DBE_KT22_datafiles_100102_csv/KCs.csv"
+CONCEPT_CSV = "KCs.csv"
 # id, choice_text, is_correct, question_id
-OPTION_CSV = "2_DBE_KT22_datafiles_100102_csv/Question_Choices.csv"
+OPTION_CSV = "Question_Choices.csv"
 # id, selection_change, start_time, end_time, difficulty_feedback, trust_feedback, answer_state,
 # answer_text, student_id, hint_used, question_id, answer_choice_id, is_hidden
-INTERACTION_CSV = "2_DBE_KT22_datafiles_100102_csv/Transaction.csv"
+INTERACTION_CSV = "Transaction.csv"
 # id, from_knowledgecomponent_id,to_knowledgecomponent_id
-RELATION_CSV = "2_DBE_KT22_datafiles_100102_csv/KC_Relationships.csv"
+RELATION_CSV = "KC_Relationships.csv"
 
 
 def convert_column(source, target_list):
