@@ -58,10 +58,9 @@ Follow the instructions below to download and set up datasets.
 
 ### 1. DBE-KT22 Dataset
 
-- **Steps to Download and Prepare:**
-  1. Download the dataset files from [**here**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH).
-  2. Extract the downloaded files into the `data/DBE_KT22/raw` directory.
-  3. Additionally, extract the `2_DBE_KT22_datafiles_100102_csv.zip` file within the same directory to ensure all data files are available.
+1. Download the dataset files from [**here**](https://dataverse.ada.edu.au/dataset.xhtml?persistentId=doi:10.26193/6DZWOH).
+2. Extract the downloaded files into the `data/DBE_KT22/raw` directory.
+3. Additionally, extract the `2_DBE_KT22_datafiles_100102_csv.zip` file within the same directory to ensure all data files are available.
   
 - **Required Files:**
   - `Questions.csv`
@@ -74,20 +73,18 @@ Follow the instructions below to download and set up datasets.
 
 ### 2. EdNet Dataset
 
-- **Steps to Download and Prepare:**
-  1. Download the dataset file from [**here**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing).
-  2. Extract the downloaded file into the `data/EdNet/raw` directory.
-  
+1. Download the dataset file from [**here**](https://drive.google.com/file/d/1yLNUGvdWCY9tnX4L-MRfp2c2FYQWGKLm/view?usp=sharing).
+2. Extract the downloaded file into the `data/EdNet/raw` directory.
+
 - **Required File:**
   - `kt_ednet.json`
 
 
 ### 3. NIPS34 Dataset
 
-- **Steps to Download and Prepare:**
-  1. Download the dataset files from [**here**](https://eedi.com/projects/neurips-education-challenge).
-  2. Extract the downloaded files into the `data/NIPS34/raw` directory.
-  
+1. Download the dataset files from [**here**](https://eedi.com/projects/neurips-education-challenge).
+2. Extract the downloaded files into the `data/NIPS34/raw` directory.
+
 - **Required Files:**
   - `data/metadata/question_metadata_task_3_4.csv`
   - `data/train_data/train_task_3_4.csv`
@@ -96,11 +93,9 @@ Follow the instructions below to download and set up datasets.
 
 ### 4. ENEM Dataset
 
-- [**Download Link**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip)
-- **Steps to Download and Prepare:**
-  1. Download the `enem_dep.zip` file from [**here**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip).
-  2. Extract the downloaded file into the `data/ENEM/raw` directory.
-  
+1. Download the `enem_dep.zip` file from [**here**](https://github.com/godtn0/DP-MTL/blob/main/data/enem_data/enem_dep.zip).
+2. Extract the downloaded file into the `data/ENEM/raw` directory.
+
 - **Required File:**
   - `enem_dep.csv`
 
