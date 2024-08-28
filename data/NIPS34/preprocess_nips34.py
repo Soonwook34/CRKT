@@ -6,11 +6,11 @@ import pandas as pd
 
 OPTION_LIST = [1, 2, 3, 4]
 # QuestionId, SubjectId
-QUESTION_CSV = "metadata/question_metadata_task_3_4.csv"
+QUESTION_CSV = "data/metadata/question_metadata_task_3_4.csv"
 # QuestionId, UserId, AnswerId, IsCorrect, CorrectAnswer, AnswerValue
-INTERACTION_CSV = "train_data/train_task_3_4.csv"
+INTERACTION_CSV = "data/train_data/train_task_3_4.csv"
 # SubjectId, Name, ParentId, Level
-CONCEPT_CSV = "metadata/subject_metadata.csv"
+CONCEPT_CSV = "data/metadata/subject_metadata.csv"
 
 
 def convert_column(source, target_list):
@@ -30,7 +30,7 @@ def search_dict(id, target_dict, id_key, target_key):
 def preprocess(path):
     # load csv
     raw_path = os.path.join(path, "raw")
-    image_path = os.path.join(raw_path, "images")
+    image_path = os.path.join(raw_path, "data", "images")
     question_path = os.path.join(raw_path, QUESTION_CSV)
     interaction_path = os.path.join(raw_path, INTERACTION_CSV)
     concept_path = os.path.join(raw_path, CONCEPT_CSV)
