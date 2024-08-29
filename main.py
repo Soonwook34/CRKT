@@ -244,8 +244,7 @@ if __name__ == "__main__":
     args = MainArgParser().parse_args()
     args.lr = float(args.lr)
     args.device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
-    model_list = ["DKT", "GKT", "SAKT", "AKT", "DTransformer", "DP_DKT", "CRKT",
-                  "CRKT_no_unchosen", "CRKT_no_option", "CRKT_no_topk", "CRKT_no_map"]
+    model_list = ["DKT", "GKT", "SAKT", "AKT", "DTransformer", "DP_DKT", "CRKT"]
     if args.model not in model_list:
         raise Exception(f"Model Not Found: {args.model} is not in {model_list}.")
 
