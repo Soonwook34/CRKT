@@ -77,8 +77,6 @@ class KTDataset(Dataset):
                 "option": options, "answer": answers, "unchosen": unchosen_options}
 
     def generate_cl_data(self, flip_rate, max_option_list, seed):
-        count = 0
-        count_all, count_target_all, count_target, count_flip_pos, count_flip_neg = 0, 0, 0, 0, 0
         pos_scores, pos_options = [], []
         neg_scores, neg_options = [], []
         rand = Random(seed)
@@ -95,52 +93,37 @@ class KTDataset(Dataset):
                 pos_score, pos_option = deepcopy(score), deepcopy(option)
                 neg_score, neg_option = deepcopy(score), deepcopy(option)
                 for t in range(len(question)):
-                    count_all += 1
                     if concept[t] in target_info:
-                        count_target_all += 1
                         if rand.random() < flip_rate:
-                            count_target += 1
-                            target_correct_rate = self.correct_rate[question[t]]
+                            target_correct_rate = target_info[concept[t]]["correct_rate"]
                             max_opt = max_option_list[question[t]]
                             # pos: change low correct rate question's response to 1
                             # neg: change high correct rate question's response to 0
                             if target_info[concept[t]]["score"] == 1:
                                 if self.correct_rate[question[t]] <= target_correct_rate:
-                                    if pos_score[t] != 1:
-                                        count_flip_pos += 1
                                     pos_score[t] = 1
                                     pos_option[t] = answer[t]
                                 else:
-                                    if neg_score[t] != 0:
-                                        count_flip_neg += 1
                                     neg_score[t] = 0
                                     neg_option[t] = (answer[t] + randint(1, max_opt - 1)) % max_opt
                             # pos: change high correct rate question's response to 0
                             # neg: change low correct rate question's response to 1
                             else:
                                 if self.correct_rate[question[t]] > target_correct_rate:
-                                    if pos_score[t] != 0:
-                                        count_flip_pos += 1
                                     pos_score[t] = 0
                                     pos_option[t] = (answer[t] + randint(1, max_opt - 1)) % max_opt
                                 else:
-                                    if neg_score[t] != 1:
-                                        count_flip_neg += 1
                                     neg_score[t] = 1
                                     neg_option[t] = answer[t]
                 pos_scores.append(pos_score)
                 pos_options.append(pos_option)
                 neg_scores.append(neg_score)
                 neg_options.append(neg_option)
-            count_flip = count_flip_pos + count_flip_neg
-            # if count_target > 0 and count_all > 0:
-            #     print(count_all, count_target_all, count_target, count_flip_pos, count_flip_neg)
-            #     print(f"{count_flip / count_target:.2f}, {count_flip / count_all:.2f}")
         else:
             pos_scores, pos_options = deepcopy(self.score), deepcopy(self.option)
             neg_scores, neg_options = deepcopy(self.score), deepcopy(self.option)
 
-        return {"pos_score": pos_scores, "pos_option": pos_options, "neg_score": neg_scores, "neg_option": pos_options}
+        return {"pos_score": pos_scores, "pos_option": pos_options, "neg_score": neg_scores, "neg_option": neg_options}
 
 
 def pad_collate(batch):
